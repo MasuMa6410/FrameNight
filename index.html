@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>FrameNight | Find Your Next Favorite Film</title>
+
+    <meta
+        name="description"
+        content="Discover your next favorite film with FrameNight, a curated movie discovery experience."
+    />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #100d1b;
+        }
+
+        .hero {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(16, 13, 27, 0.97) 0%,
+                    rgba(16, 13, 27, 0.82) 48%,
+                    rgba(16, 13, 27, 0.25) 100%
+                ),
+                url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=85");
+
+            background-position: center;
+            background-size: cover;
+        }
+
+        .movie-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+
+    <!-- Navigation -->
+    <header class="border-b border-white/10 bg-[#100d1b]/95">
+        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-6 py-5">
+
+            <a href="./index.html" class="text-2xl font-bold tracking-tight">
+                Frame<span class="text-amber-300">Night.</span>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-5 text-sm text-gray-300">
+                <a href="./index.html" class="text-amber-300">Home</a>
+                <a href="./Root/movies.html" class="transition hover:text-amber-300">Movies</a>
+                <a href="./Root/about.html" class="transition hover:text-amber-300">About</a>
+                <a href="./Root/contact.html" class="transition hover:text-amber-300">Contact</a>
+            </div>
+
+            <a
+                href="./Root/movies.html"
+                class="rounded-full bg-amber-300 px-5 py-2.5 text-sm font-semibold text-gray-950 transition hover:bg-amber-200"
+            >
+                Explore Films
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero flex min-h-[540px] items-center px-6 py-20 md:min-h-[600px]">
+
+            <div class="mx-auto w-full max-w-7xl">
+
+                <div class="max-w-2xl">
+
+                    <p class="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-amber-300">
+                        Your next movie night starts here
+                    </p>
+
+                    <h1 class="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+                        Every story
+                        <span class="text-amber-300">deserves</span>
+                        a night.
+                    </h1>
+
+                    <p class="mt-6 max-w-lg text-base leading-8 text-gray-300 sm:text-lg">
+                        From unforgettable adventures to stories that stay
+                        with you, discover a film worth your time.
+                    </p>
+
+                    <div class="mt-9 flex flex-wrap gap-4">
+
+                        <a
+                            href="./Root/movies.html"
+                            class="rounded-full bg-amber-300 px-7 py-3.5 font-semibold text-gray-950 transition hover:bg-amber-200"
+                        >
+                            Discover Movies →
+                        </a>
+
+                        <a
+                            href="#featured"
+                            class="rounded-full border border-white/25 px-7 py-3.5 font-semibold transition hover:border-amber-300 hover:text-amber-300"
+                        >
+                            Explore Highlights
+                        </a>
+
+                    </div>
+
+                    <div class="mt-12 flex flex-wrap gap-8 text-sm text-gray-400">
+
+                        <div>
+                            <p class="text-xl font-bold text-white">Curated</p>
+                            <p class="mt-1">Stories worth watching</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xl font-bold text-white">4 Genres</p>
+                            <p class="mt-1">Something for every mood</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xl font-bold text-white">One Place</p>
+                            <p class="mt-1">Your next movie night</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Featured Movies -->
+        <section id="featured" class="mx-auto max-w-7xl px-6 py-20">
+
+            <div class="mb-10 flex flex-wrap items-end justify-between gap-5">
+
+                <div>
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+                        Handpicked for you
+                    </p>
+
+                    <h2 class="text-3xl font-bold sm:text-4xl">
+                        Tonight's highlights
+                    </h2>
+
+                    <p class="mt-3 text-gray-400">
+                        A few stories to get you started.
+                    </p>
+                </div>
+
+                <a
+                    href="./Root/movies.html"
+                    class="text-sm font-semibold text-amber-300 transition hover:text-amber-200"
+                >
+                    View all movies →
+                </a>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+
+                <!-- Movie 1 -->
+                <article class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="./Images/Wonder Woman 1984 movie poster.jpg"
+                            alt="Wonder Woman 1984 movie poster"
+                            class="h-80 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+
+                        <div class="mb-3 flex items-center justify-between gap-2">
+                            <span class="text-xs text-gray-400">Action · Adventure</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 6.3</span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold">Wonder Woman 1984</h3>
+
+                        <a
+                            href="./Root/movies.html"
+                            class="mt-5 inline-block text-sm font-semibold text-amber-300 hover:text-amber-200"
+                        >
+                            Explore film →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 2 -->
+                <article class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="./Images/Inside Out movie poster.jpg"
+                            alt="Inside Out movie poster"
+                            class="h-80 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+
+                        <div class="mb-3 flex items-center justify-between gap-2">
+                            <span class="text-xs text-gray-400">Animation · Family</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 8.1</span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold">Inside Out</h3>
+
+                        <a
+                            href="./Root/movies.html"
+                            class="mt-5 inline-block text-sm font-semibold text-amber-300 hover:text-amber-200"
+                        >
+                            Explore film →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 3 -->
+                <article class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="./Images/The Pursuit of Happyness.jpg"
+                            alt="The Pursuit of Happyness movie poster"
+                            class="h-80 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+
+                        <div class="mb-3 flex items-center justify-between gap-2">
+                            <span class="text-xs text-gray-400">Drama · Biography</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 8.0</span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold">The Pursuit of Happyness</h3>
+
+                        <a
+                            href="./Root/movies.html"
+                            class="mt-5 inline-block text-sm font-semibold text-amber-300 hover:text-amber-200"
+                        >
+                            Explore film →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 4 -->
+                <article class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="./Images/The Dark Knight.jpg"
+                            alt="The Dark Knight movie poster"
+                            class="h-80 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+
+                        <div class="mb-3 flex items-center justify-between gap-2">
+                            <span class="text-xs text-gray-400">Action · Crime</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 9.0</span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold">The Dark Knight</h3>
+
+                        <a
+                            href="./Root/movies.html"
+                            class="mt-5 inline-block text-sm font-semibold text-amber-300 hover:text-amber-200"
+                        >
+                            Explore film →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Browse by Mood -->
+        <section class="border-y border-white/10 bg-white/[0.025]">
+
+            <div class="mx-auto max-w-7xl px-6 py-20">
+
+                <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+                    Choose your mood
+                </p>
+
+                <h2 class="text-3xl font-bold sm:text-4xl">
+                    What are we watching?
+                </h2>
+
+                <p class="mt-3 max-w-xl leading-7 text-gray-400">
+                    Some nights call for a little adventure. Others call
+                    for a good laugh or a story that makes you think.
+                </p>
+
+                <div class="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+                    <a href="./Root/movies.html?genre=Action"
+                       class="rounded-2xl border border-white/10 bg-[#191527] p-6 transition hover:-translate-y-1 hover:border-amber-300/50">
+
+                        <span class="text-2xl">⚡</span>
+                        <h3 class="mt-4 text-xl font-semibold">Action</h3>
+                        <p class="mt-2 text-sm leading-6 text-gray-400">For nights full of excitement.</p>
+
+                    </a>
+
+                    <a href="./Root/movies.html?genre=Drama"
+                       class="rounded-2xl border border-white/10 bg-[#191527] p-6 transition hover:-translate-y-1 hover:border-amber-300/50">
+
+                        <span class="text-2xl">🎭</span>
+                        <h3 class="mt-4 text-xl font-semibold">Drama</h3>
+                        <p class="mt-2 text-sm leading-6 text-gray-400">For stories that stay with you.</p>
+
+                    </a>
+
+                    <a href="./Root/movies.html?genre=Animation"
+                       class="rounded-2xl border border-white/10 bg-[#191527] p-6 transition hover:-translate-y-1 hover:border-amber-300/50">
+
+                        <span class="text-2xl">✨</span>
+                        <h3 class="mt-4 text-xl font-semibold">Animation</h3>
+                        <p class="mt-2 text-sm leading-6 text-gray-400">For a little wonder and imagination.</p>
+
+                    </a>
+
+                    <a href="./Root/movies.html?genre=Crime"
+                       class="rounded-2xl border border-white/10 bg-[#191527] p-6 transition hover:-translate-y-1 hover:border-amber-300/50">
+
+                        <span class="text-2xl">🔎</span>
+                        <h3 class="mt-4 text-xl font-semibold">Crime</h3>
+                        <p class="mt-2 text-sm leading-6 text-gray-400">For mysteries and unexpected turns.</p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Call to Action -->
+        <section class="mx-auto max-w-7xl px-6 py-20">
+
+            <div class="rounded-3xl border border-amber-300/20 bg-gradient-to-br from-[#241c39] to-[#171323] px-7 py-12 text-center sm:px-12 sm:py-16">
+
+                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+                    Your next story is waiting
+                </p>
+
+                <h2 class="mx-auto max-w-2xl text-3xl font-bold sm:text-5xl">
+                    Make tonight a little more cinematic.
+                </h2>
+
+                <p class="mx-auto mt-5 max-w-xl leading-7 text-gray-400">
+                    Explore the collection and find a film that fits your mood.
+                </p>
+
+                <a
+                    href="./Root/movies.html"
+                    class="mt-8 inline-block rounded-full bg-amber-300 px-7 py-3.5 font-semibold text-gray-950 transition hover:bg-amber-200"
+                >
+                    Browse the collection →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-6 py-8">
+
+            <a href="./index.html" class="text-xl font-bold">
+                Frame<span class="text-amber-300">Night.</span>
+            </a>
+
+            <p class="text-sm text-gray-500">
+                © 2026 FrameNight. A movie discovery concept.
+            </p>
+
+            <div class="flex gap-5 text-sm text-gray-400">
+                <a href="./Root/movies.html" class="hover:text-amber-300">Movies</a>
+                <a href="./Root/about.html" class="hover:text-amber-300">About</a>
+                <a href="./Root/contact.html" class="hover:text-amber-300">Contact</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

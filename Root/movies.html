@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Explore Movies | FrameNight</title>
+
+    <meta
+        name="description"
+        content="Explore action, drama, animation, and crime films with FrameNight."
+    />
+
+    <style>
+        body {
+            background: #100d1b;
+        }
+
+        .movie-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .filter-btn.active {
+            background: #fcd34d;
+            color: #171323;
+            border-color: #fcd34d;
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+
+    <!-- Navigation -->
+    <header class="border-b border-white/10 bg-[#100d1b]/95">
+        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-6 py-5">
+
+            <a href="../index.html" class="text-2xl font-bold tracking-tight">
+                Frame<span class="text-amber-300">Night.</span>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-5 text-sm text-gray-300">
+                <a href="../index.html" class="transition hover:text-amber-300">Home</a>
+                <a href="./movies.html" class="text-amber-300">Movies</a>
+                <a href="./about.html" class="transition hover:text-amber-300">About</a>
+                <a href="./contact.html" class="transition hover:text-amber-300">Contact</a>
+            </div>
+
+            <a href="movies.html"
+               class="rounded-full bg-amber-300 px-5 py-2.5 text-sm font-semibold text-gray-950 hover:bg-amber-200">
+                Explore Films
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="mx-auto max-w-7xl px-6 pb-8 pt-16">
+
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+                The collection
+            </p>
+
+            <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+                Find your next <span class="text-amber-300">favorite.</span>
+            </h1>
+
+            <p class="mt-5 max-w-2xl leading-7 text-gray-400">
+                Explore films by genre, search for a title, and find
+                something that matches your mood.
+            </p>
+
+        </section>
+
+
+        <!-- Search and Filters -->
+        <section class="mx-auto max-w-7xl px-6 py-8">
+
+            <label for="movieSearch" class="mb-3 block text-sm font-medium text-gray-300">
+                Search movies
+            </label>
+
+            <input
+                id="movieSearch"
+                type="search"
+                placeholder="Try 'Batman' or 'Animation'..."
+                class="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-amber-300 sm:max-w-xl"
+            >
+
+            <div class="mt-6 flex flex-wrap gap-3" aria-label="Movie categories">
+
+                <button
+                    type="button"
+                    class="filter-btn active rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium transition"
+                    data-filter="All"
+                    aria-pressed="true"
+                >
+                    All movies
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-btn rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium transition hover:border-amber-300"
+                    data-filter="Action"
+                    aria-pressed="false"
+                >
+                    Action
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-btn rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium transition hover:border-amber-300"
+                    data-filter="Drama"
+                    aria-pressed="false"
+                >
+                    Drama
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-btn rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium transition hover:border-amber-300"
+                    data-filter="Animation"
+                    aria-pressed="false"
+                >
+                    Animation
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-btn rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium transition hover:border-amber-300"
+                    data-filter="Crime"
+                    aria-pressed="false"
+                >
+                    Crime
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Movie Collection -->
+        <section class="mx-auto max-w-7xl px-6 pb-20">
+
+            <div class="mb-7 flex items-center justify-between gap-4">
+
+                <h2 class="text-xl font-semibold">
+                    Movie collection
+                </h2>
+
+                <p id="movieCount" class="text-sm text-gray-400" aria-live="polite">
+                    6 movies
+                </p>
+
+            </div>
+
+
+            <div id="movieGrid" class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Movie 1 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="Wonder Woman 1984"
+                    data-category="Action"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/Wonder Woman 1984 movie poster.jpg"
+                            alt="Wonder Woman 1984 movie poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Action · Adventure</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 6.3</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">Wonder Woman 1984</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            An extraordinary hero faces a new challenge in a changing world.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 2 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="Inside Out"
+                    data-category="Animation"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/Inside Out movie poster.jpg"
+                            alt="Inside Out movie poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Animation · Family</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 8.1</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">Inside Out</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            An imaginative journey through the emotions that shape our lives.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 3 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="The Pursuit of Happyness"
+                    data-category="Drama"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/The Pursuit of Happyness.jpg"
+                            alt="The Pursuit of Happyness movie poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Drama · Biography</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 8.0</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">The Pursuit of Happyness</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            A father's determination drives him through difficult times.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 4 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="The Dark Knight"
+                    data-category="Crime"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/The Dark Knight.jpg"
+                            alt="The Dark Knight movie poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Action · Crime</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 9.0</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">The Dark Knight</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            A masked hero confronts a criminal who threatens an entire city.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 5 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="The Shawshank Redemption"
+                    data-category="Drama"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/The Shawshank Redemption poster.jpg"
+                            alt="The Shawshank Redemption poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Drama</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 9.3</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">The Shawshank Redemption</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            A story of friendship, hope, and the strength to keep going.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Movie 6 -->
+                <article
+                    class="movie-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
+                    data-title="Inception"
+                    data-category="Action"
+                >
+
+                    <div class="overflow-hidden">
+                        <img
+                            src="../Images/Inception movie poster.jpg"
+                            alt="Inception movie poster"
+                            class="h-96 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="text-sm text-gray-400">Action · Sci-Fi</span>
+                            <span class="text-sm font-semibold text-amber-300">★ 8.8</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">Inception</h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-400">
+                            A specialist enters the world of dreams for an unusual mission.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- No Results -->
+            <div id="noResults" class="hidden py-16 text-center">
+
+                <p class="text-3xl">🎬</p>
+
+                <h3 class="mt-4 text-xl font-semibold">
+                    No movies found
+                </h3>
+
+                <p class="mt-2 text-gray-400">
+                    Try another title or choose a different category.
+                </p>
+
+                <button
+                    id="resetFilters"
+                    type="button"
+                    class="mt-5 rounded-full bg-amber-300 px-5 py-2.5 font-semibold text-gray-950 hover:bg-amber-200"
+                >
+                    Show all movies
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-6 py-8">
+
+                <a href="index.html" class="text-xl font-bold">
+                Frame<span class="text-amber-300">Night.</span>
+            </a>
+
+            <p class="text-sm text-gray-500">
+                © 2026 FrameNight. A movie discovery concept.
+            </p>
+
+            <div class="flex gap-5 text-sm text-gray-400">
+                <a href="./movies.html" class="hover:text-amber-300">Movies</a>
+                <a href="./about.html" class="hover:text-amber-300">About</a>
+                <a href="./contact.html" class="hover:text-amber-300">Contact</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Movie Search and Filter JavaScript -->
+    <script>
+        const searchInput = document.getElementById("movieSearch");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const movieCards = document.querySelectorAll(".movie-card");
+        const movieCount = document.getElementById("movieCount");
+        const noResults = document.getElementById("noResults");
+        const resetButton = document.getElementById("resetFilters");
+
+        let activeCategory = "All";
+
+        function filterMovies() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            movieCards.forEach((card) => {
+                const title = card.dataset.title.toLowerCase();
+                const category = card.dataset.category.toLowerCase();
+                const description = card.textContent.toLowerCase();
+
+                const matchesSearch =
+                    title.includes(searchTerm) ||
+                    category.includes(searchTerm) ||
+                    description.includes(searchTerm);
+
+                const matchesCategory =
+                    activeCategory === "All" ||
+                    category === activeCategory.toLowerCase();
+
+                const shouldShow = matchesSearch && matchesCategory;
+
+                card.classList.toggle("hidden", !shouldShow);
+
+                if (shouldShow) {
+                    visibleCount++;
+                }
+            });
+
+            movieCount.textContent =
+                `${visibleCount} ${visibleCount === 1 ? "movie" : "movies"}`;
+
+            noResults.classList.toggle("hidden", visibleCount !== 0);
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                activeCategory = button.dataset.filter;
+
+                filterButtons.forEach((item) => {
+                    const isActive = item === button;
+
+                    item.classList.toggle("active", isActive);
+                    item.setAttribute("aria-pressed", String(isActive));
+                });
+
+                filterMovies();
+            });
+        });
+
+        searchInput.addEventListener("input", filterMovies);
+
+        resetButton.addEventListener("click", () => {
+            searchInput.value = "";
+            activeCategory = "All";
+
+            filterButtons.forEach((button) => {
+                const isActive = button.dataset.filter === "All";
+
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            filterMovies();
+            searchInput.focus();
+        });
+
+        // Support genre links from the homepage.
+        const params = new URLSearchParams(window.location.search);
+        const requestedGenre = params.get("genre");
+
+        if (requestedGenre) {
+            const matchingButton = [...filterButtons].find(
+                (button) =>
+                    button.dataset.filter.toLowerCase() ===
+                    requestedGenre.toLowerCase()
+            );
+
+            if (matchingButton) {
+                matchingButton.click();
+            }
+        }
+
+        filterMovies();
+    </script>
+
+</body>
+</html>
